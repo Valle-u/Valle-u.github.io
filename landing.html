@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MooneyMaker Landing</title>
+    <link rel="stylesheet" href="styles2.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    
+    <header class="header-landing">
+        <div class="wrap-logo">
+            <img src="img/logoMaker.png" alt="MooneyMaker Logo" class="logo-header">
+        </div>
+    </header>
+    
+    <div class="wrap-content">
+
+        <div class="wrap-servicios-section">
+            <!-- WhatsApp: toda la caja es clickeable y lleva al enlace, sin botón "Ver más" -->
+            <a href="https://mooneymaker.co/casino" class="item-servicios-section item-servicios-section-whatsapp" style="text-decoration:none; color:inherit; display:block;">
+                <span class="name_game">Hablanos al WhatsApp</span>
+            </a>
+
+            <!-- Video: sigue igual, sin botón "Ver más", abre popup -->
+            <div class="item-servicios-section item-servicios-section-video">
+                <p class="name_game">No sabes como registrarte?</p>
+                <div class="descripcion-servicio" style="display:none;">
+                    <video controls style="width:100%; border-radius:0.5rem; box-shadow:0 2px 12px #0003;">
+                        <source src="videos/como-crear-un-usuario.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+                </div>
+            </div>
+
+            <!-- Live Casino: toda la caja es clickeable y lleva al enlace, sin botón "Ver más" -->
+            <a href="https://mooneymaker.co/live-casino" class="item-servicios-section item-servicios-section-livecasino" style="text-decoration:none; color:inherit; display:block;">
+                <span class="name_game">Live Casino</span>
+            </a>
+        </div>
+        
+        <div class="wrap-cta">
+            <a href="https://mooneymaker.co/home?ref=19119" class="cta-a">JUGAR</a>
+        </div>
+        
+        <div class="wrap-cta-form">
+            <div class="wrap-text-column">
+                <h3>Contacta con nosotros</h3>
+                <form action="procesar_formulario.php" method="post" class="form">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre" id="nombre" required="" placeholder="Maria">
+                    <br><br>
+
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" name="apellido" id="apellido" required="" placeholder="Sanchez">
+                    <br><br>
+
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" name="email" id="email" required="" placeholder="tumail@ejemplo.com">
+                    <br><br>
+
+                    <label for="telefono">Número de teléfono:</label>
+                    <input type="tel" name="telefono" id="telefono" required="" placeholder="+54 9XXXXXXXX">
+                    <br><br>
+
+                    <input type="submit" value="Enviar" class="cta-a">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="popupOverlay"></div>
+        <div class="popup-servicio-video" id="popupServicio">
+            <button onclick="cerrarPopupServicio()" style="position:absolute;top:1rem;right:1rem;font-size:1.5rem;background:none;border:none;color:#fff;cursor:pointer;">×</button>
+            <div id="popupServicioContenido">
+    <!-- Aquí se cargará el contenido dinámicamente -->
+            </div>
+        </div>
+    
+    <script src="scripts.js"></script>
+
+</body>
+</html>

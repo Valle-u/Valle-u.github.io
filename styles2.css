@@ -1,0 +1,440 @@
+/* === VARIABLES === */
+/* === VARIABLES === */
+:root {
+  --main-c: #fff350;      /* Amarillo más claro */
+  --main-c2: #fff89a;     /* Amarillo pastel claro */
+  --border-r: .2rem;
+  --bg-dark: #23233a;
+  --bg-mid: #2d2e42;
+  --bg-light: #44455a;
+  --text-main: #fff;
+  --text-accent: #ffe066;
+}
+/* === RESET & BASE === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: 
+    linear-gradient(90deg, rgba(35,35,58,0.92) 0%, rgba(92,93,112,0.6) 100%),
+    url('img/casino-adentro.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-origin: border-box; /* Asegura que cubra todo el área */
+  background-clip: border-box;   /* Asegura que cubra todo el área */
+  color: var(--text-main);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+a { text-decoration: none; color: inherit; }
+ul, li { list-style: none; }
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2.5rem; color: #c0bebe; }
+h3 { font-size: 2.2rem; }
+p { font-size: 1.1rem; }
+
+
+/* === HEADER === */
+.header-landing {
+  display: flex; align-items: center; justify-content: space-between;
+  background: transparent; padding: 0.5rem 2rem; height: 4rem;
+  box-shadow: 0 2px 8px 0 #0002;
+}
+
+.wrap-logo { display: flex; align-items: center; justify-content: center; width: 100%; }
+.logo-header {
+  max-width: 110px; 
+  width: 100%; 
+  height: auto;
+  border-radius: 1rem; 
+  background: #181827; 
+  padding: 0.3rem 0.8rem;
+  box-shadow: 0 2px 8px 0 #0006; 
+  transition: .3s;
+  margin-right: 0.2rem;
+}
+
+.logo-header:hover {
+  transform: scale(1.08) rotate(-3deg);
+  box-shadow: 0 4px 16px 0 #0008; background: #333446;
+}
+/* === CONTENEDOR PRINCIPAL FLEX === */
+.wrap-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* === BOTÓN JUGAR CENTRO === */
+.wrap-cta {
+  position: static;
+  width: auto;
+  height: auto;
+  z-index: 2;
+  background: none;
+  margin: 3rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-a {
+  color: #23233a;
+  background: linear-gradient(90deg, var(--main-c2) 60%, var(--main-c) 100%);
+  font-weight: bold;
+  font-size: 2rem; /* Aumenta el tamaño del texto */
+  padding: 1.5rem 4.5rem; /* Más espacio interno */
+  border-radius: 3rem; /* Botón más redondeado */
+  box-shadow: 0 8px 32px 0 #ffe066cc, 0 4px 24px 0 #ffe06688; /* Sombra más intensa */
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.18s;
+  letter-spacing: 2px; /* Más separación entre letras */
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  margin: 0;
+  display: inline-block;
+  animation: pulse-cta 1.2s infinite alternate; /* Animación para llamar la atención */
+}
+
+.cta-a:hover {
+  background: linear-gradient(90deg, var(--main-c) 60%, var(--main-c2) 100%);
+  color: #23233a; 
+  box-shadow: 0 4px 24px 0 #ffe06699; 
+  transform: translateY(-3px) scale(1.05);
+}
+
+@keyframes pulse-cta {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 8px 32px 0 #ffe066cc, 0 4px 24px 0 #ffe06688;
+  }
+  100% {
+    transform: scale(1.06);
+    box-shadow: 0 12px 48px 0 #ffe066ee, 0 8px 32px 0 #ffe066aa;
+  }
+}
+
+
+/* FORMULARIO ESTÉTICO */
+.wrap-text-column {
+  background: rgba(35,35,58,0.92);
+  padding: 2.5rem 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px 0 #0006;
+  min-width: 340px;
+  max-width: 400px;
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.wrap-text-column h3 {
+  color: var(--main-c);
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.wrap-cta-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.form label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: var(--text-accent);
+  display: block;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="tel"] {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1.1rem;
+  border-radius: 0.7rem;
+  border: 1.5px solid var(--main-c2);
+  background: #23233a;
+  color: var(--text-main);
+  font-size: 1rem;
+  transition: border 0.2s, box-shadow 0.2s;
+  outline: none;
+  box-shadow: 0 2px 8px 0 #0002;
+}
+
+.form input[type="text"]:focus,
+.form input[type="email"]:focus,
+.form input[type="tel"]:focus {
+  border: 1.5px solid var(--main-c);
+  box-shadow: 0 0 0 2px #fff35044;
+}
+
+.form input[type="submit"].cta-a {
+  margin-top: 0.5rem;
+  width: 100%;
+  font-size: 1.1rem;
+  padding: 0.8rem 0;
+  border-radius: 2rem;
+  box-shadow: 0 2px 8px 0 #ffe06655;
+  background: linear-gradient(90deg, var(--main-c2) 60%, var(--main-c) 100%);
+  color: #23233a;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: none;
+  outline: none;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.18s;
+  animation: none; /* Quita el pulso */
+}
+
+.form input[type="submit"].cta-a:hover {
+  background: linear-gradient(90deg, var(--main-c) 60%, var(--main-c2) 100%);
+  box-shadow: 0 4px 16px 0 #ffe06688;
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* ============================== SERVICIOS SECTION =========================== */
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: flex-end;
+}
+
+/* Servicios en columna */
+.wrap-servicios-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.7rem;
+  align-items: stretch;
+  width: 340px;
+}
+
+/* Estética de cada item de servicio */
+.item-servicios-section {
+  min-height: 200px; /* Increased minimum height */
+  padding: 2rem; /* Uniform padding */
+  margin-bottom: 2rem;
+  border-radius: 1.5rem; /* Slightly larger radius */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Refined shadow */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra el contenido verticalmente */
+  align-items: center; /* Centra el contenido horizontalmente */
+  text-align: center;
+  gap: 0.5rem; /* Espacio entre título y descripción */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent; /* Borde para animar en hover */
+}
+
+.item-servicios-section:hover {
+  transform: translateY(-8px) scale(1.05); /* Mayor elevación */
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25); /* Sombra más pronunciada */
+  border-color: var(--main-c2); /* Borde dorado al pasar el mouse */
+}
+
+.item-servicios-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Darker overlay for better readability */
+  border-radius: inherit; /* Match border radius */
+  z-index: 1;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease;
+}
+
+.item-servicios-section:hover::before {
+  opacity: 1; /* Show overlay on hover */
+}
+
+.item-servicios-section > * {
+  position: relative;
+  z-index: 2; /* Ensure text is above the overlay */
+}
+
+.item-servicios-section .name_game { /* Specificity */
+  font-size: 2.1rem; /* Más grande y llamativo */
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8); /* Sombra más definida para legibilidad */
+}
+
+.item-servicios-section .descripcion-servicio { /* Specificity */
+  font-size: 1rem; /* Slightly smaller */
+  max-width: 90%;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+
+.item-servicios-section-whatsapp {
+    background-image: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.1) 60%), url('img/whatsappservice.png');
+}
+
+.item-servicios-section-video {
+    background-image: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.1) 60%), url('img/tutorial.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.item-servicios-section-livecasino {
+    background-image: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.1) 60%), url('img/dorado.jpg');
+}
+
+.name_game { /* Reduced specificity */
+  color: var(--main-c); 
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7); /* Adjusted shadow */
+  letter-spacing: 0.5px;
+  font-weight: 600; /* Slightly lighter font weight */
+}
+
+
+
+/* Ajusta el formulario para que combine con los servicios */
+.wrap-text-column {
+  background: rgba(35,35,58,0.92);
+  padding: 2.5rem 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px 0 #0006;
+  min-width: 340px;
+  max-width: 400px;
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.popup-servicio-video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #23233a;
+  color: var(--text-main);
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 32px 0 #000a;
+  padding: 2rem 1.5rem;
+  z-index: 9999;
+  display: none; /* Oculto por defecto */
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+}
+
+.popup-servicio-video.activa {
+  display: block;
+}
+
+/* Fondo oscuro detrás del pop-up */
+.popup-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(35,35,58,0.85);
+  z-index: 9998;
+  display: none;
+}
+
+.popup-overlay.activa {
+  display: block;
+}
+
+/* ============================== RESPONSIVE DESIGN =========================== */
+
+/* Tablet y pantallas más pequeñas (hasta 1024px) */
+@media (max-width: 1024px) {
+  .wrap-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 1rem; /* Añade padding para que no se pegue a los bordes */
+  }
+
+  .left-column {
+    align-items: center; /* Centra los items de servicios */
+    order: 2; /* Mueve la columna de servicios debajo del formulario */
+  }
+
+  .wrap-text-column {
+    order: 1; /* Mueve el formulario arriba */
+    max-width: 500px; /* Permite que el formulario sea un poco más ancho */
+    width: 100%;
+  }
+
+  .wrap-servicios-section {
+    width: 100%;
+    max-width: 500px; /* Igual que el formulario para consistencia */
+  }
+
+  .item-servicios-section {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Móviles (hasta 768px) */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px; /* Ajusta el tamaño de fuente base */
+    background-attachment: scroll; /* Mejora el rendimiento en móviles */
+  }
+
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.8rem; }
+  
+  .header-landing {
+    padding: 0.5rem 1rem; /* Menos padding en el header */
+  }
+
+  .wrap-content {
+    padding: 1.5rem 1rem;
+    gap: 2.5rem;
+  }
+  
+  .wrap-text-column,
+  .wrap-servicios-section {
+    min-width: unset; /* Resetea el min-width */
+    width: 100%;      /* Ocupa todo el ancho disponible */
+    max-width: 100%;  /* Resetea el max-width */
+  }
+  
+  .wrap-text-column {
+    padding: 2rem 1.5rem; /* Ajusta el padding del formulario */
+  }
+
+  .wrap-text-column h3 {
+    font-size: 1.7rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .cta-a {
+    font-size: 1.5rem;
+    padding: 1.2rem 3rem;
+  }
+}
